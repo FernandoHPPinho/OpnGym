@@ -4,7 +4,7 @@ import WorkoutForm from '../components/WorkoutForm'
 export default function Home() {
   return (
     <main className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Log Your Workout</h1>
+      <h1 className="text-2xl font-bold mb-4">Informe seu treino</h1>
       <WorkoutForm />
     </main>
   )
