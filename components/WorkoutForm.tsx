@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, FormEvent } from 'react'
 import { Exercise } from '../types/workout'
 import { addWorkout } from '../lib/workout'
 
@@ -9,7 +9,7 @@ export default function WorkoutForm() {
     { name: '', sets: 0, reps: 0, weight: 0 }
   ] as Exercise[])
 
-  const handleSubmit = async (e: Event) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
       await addWorkout(new Date().toISOString().split('T')[0], exercises)

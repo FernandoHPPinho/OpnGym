@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "vercel-build": "next build"
   },
   "repository": {
     "type": "git",
@@ -24,8 +26,10 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@types/react": "19.1.6",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.4",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.8",
+    "typescript": "5.8.3"
   }
 }
