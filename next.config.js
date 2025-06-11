@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   // Ensure proper handling of client components
   webpack: (config) => {
     config.resolve.fallback = { fs: false, net: false, tls: false }
