@@ -17,14 +17,20 @@ export default function SignIn() {
     setLoading(true)
 
     try {
+      console.log('Starting sign in process...')
       const result = await authService.signIn(email, password)
+      console.log('Sign in result:', result)
       
       if (result.success) {
-        router.push('/') // Redirect to home page after successful sign in
+        console.log('Sign in successful, redirecting...')
+        // Force a hard navigation to ensure the session is properly loaded
+        window.location.href = '/'
       } else {
+        console.error('Sign in failed:', result.error)
         setError(result.error || 'Failed to sign in')
       }
     } catch (err) {
+      console.error('Unexpected error during sign in:', err)
       setError('An unexpected error occurred')
     } finally {
       setLoading(false)

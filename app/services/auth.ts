@@ -37,18 +37,24 @@ export const authService = {
    */
   async signIn(email: string, password: string): Promise<AuthResponse> {
     try {
+      console.log('Attempting to sign in with email:', email)
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       })
 
-      if (error) throw error
+      if (error) {
+        console.error('Supabase auth error:', error)
+        throw error
+      }
 
+      console.log('Sign in successful, session data:', data)
       return {
         success: true,
         data,
       }
     } catch (error) {
+      console.error('Detailed sign in error:', error)
       return {
         success: false,
         error: error instanceof AuthError ? error.message : 'An error occurred during sign in',
