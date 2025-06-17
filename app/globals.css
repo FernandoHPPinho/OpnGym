@@ -3,11 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+  min-height: 100vh;
+}
+
+/* Espaçamentos base */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+/* Espaçamento entre seções */
+section {
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+/* Espaçamento entre elementos em grid/flex */
+.grid > *, .flex > * {
+  margin: 0.5rem;
+}
+
+/* Espaçamento em cards */
+.card {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Espaçamento em formulários */
+form > * {
+  margin-bottom: 1rem;
+}
+
+/* Espaçamento em botões */
+button {
+  margin: 0.5rem;
 } 
