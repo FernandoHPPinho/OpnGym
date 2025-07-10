@@ -55,7 +55,7 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <a
-            href="/workouts/new"
+            href="/protected/workouts/new"
             className="block p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
           >
             <h3 className="font-medium text-blue-900">New Workout</h3>
@@ -64,7 +64,7 @@ export default function Home() {
             </p>
           </a>
           <a
-            href="/workouts"
+            href="/protected/workouts"
             className="block p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors"
           >
             <h3 className="font-medium text-green-900">View History</h3>
