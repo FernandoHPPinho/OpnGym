@@ -2,6 +2,8 @@
 
 import WorkoutForm from '../../../../components/WorkoutForm'
 
+import React from 'react';
+
 export default function NewWorkoutPage() {
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -9,4 +11,4 @@ export default function NewWorkoutPage() {
       <WorkoutForm />
     </div>
   )
-} 
+}
