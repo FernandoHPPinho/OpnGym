@@ -30,10 +30,10 @@ export default function RootLayout({
               {/* Logo */}
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">OG</span>
+                  <span className="text-white font-bold text-sm">OpnG</span>
                 </div>
                 <a href="/" className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
-                  OpenGym
+                  OpnGym
                 </a>
               </div>
 

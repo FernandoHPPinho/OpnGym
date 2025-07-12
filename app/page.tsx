@@ -13,10 +13,10 @@ export default function LandingPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/auth/sign-up" className="btn btn-primary text-lg px-8 py-4">
-                Inicie Agora
+                Se registre agora
               </Link>
               <Link href="/auth/sign-in" className="btn btn-primary text-lg px-8 py-4">
-                Sign In
+                Entrar na sua conta
               </Link>
             </div>
           </div>
