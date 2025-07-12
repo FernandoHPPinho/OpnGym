@@ -47,7 +47,7 @@ export default function WorkoutsPage() {
         <div className="space-y-4">
           {workouts.map((workout) => (
             <div key={workout.id} className="bg-white p-4 rounded-lg shadow">
-              <h3 className="font-semibold text-lg mb-2">Workout on {workout.date}</h3>
+              <h3 className="font-semibold text-black mb-6">Workout on {workout.date}</h3>
               <div className="space-y-2">
                 {workout.exercises.map((exercise, index) => (
                   <div key={index} className="text-sm text-gray-600">
