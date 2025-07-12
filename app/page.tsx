@@ -15,7 +15,7 @@ export default function LandingPage() {
               <Link href="/auth/sign-up" className="btn btn-primary text-lg px-8 py-4">
                 Inicie Agora
               </Link>
-              <Link href="/auth/sign-in" className="btn btn-secondary text-lg px-8 py-4">
+              <Link href="/auth/sign-in" className="btn btn-primary text-lg px-8 py-4">
                 Sign In
               </Link>
             </div>
