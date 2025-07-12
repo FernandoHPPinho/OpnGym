@@ -30,7 +30,7 @@ export default function RootLayout({
               {/* Logo */}
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">OpnG</span>
+                  <span className="text-white font-bold text-sm">O-G</span>
                 </div>
                 <a href="/" className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
                   OpnGym
@@ -39,9 +39,6 @@ export default function RootLayout({
 
               {/* Navigation Links */}
               <div className="hidden md:flex items-center space-x-8">
-                <a href="/#features" className="text-gray-600 hover:text-gray-900 transition-colors">
-                  Features
-                </a>
                 <a href="/#about" className="text-gray-600 hover:text-gray-900 transition-colors">
                   About
                 </a>
@@ -80,13 +77,10 @@ export default function RootLayout({
               <div className="col-span-1 md:col-span-2">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">OG</span>
+                    <span className="text-white font-bold text-sm">O-G</span>
                   </div>
-                  <span className="text-xl font-bold">OpenGym</span>
+                  <span className="text-xl font-bold">OpnGym</span>
                 </div>
-                <p className="text-gray-400 max-w-md">
-                  Your personal fitness companion. Track workouts, set goals, and achieve your fitness dreams with our comprehensive workout tracking platform.
-                </p>
               </div>
               
               <div>
