@@ -26,8 +26,8 @@ export default function WorkoutsPage() {
   if (loading) {
     return (
       <div className="max-w-4xl mx-auto p-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-6">Workout History</h1>
-        <div className="text-center">Loading...</div>
+        <h1 className="text-2xl font-bold text-black mb-6">Histórico de treinos</h1>
+        <div className="text-center">Carregando...</div>
       </div>
     )
   }
@@ -47,10 +47,10 @@ export default function WorkoutsPage() {
         <div className="space-y-4">
           {workouts.map((workout) => (
             <div key={workout.id} className="bg-white p-4 rounded-lg shadow">
-              <h3 className="font-semibold text-lg mb-2">Workout on {workout.date}</h3>
+              <h3 className="font-semibold text-black mb-6">Workout on {workout.date}</h3>
               <div className="space-y-2">
                 {workout.exercises.map((exercise, index) => (
-                  <div key={index} className="text-sm text-gray-600">
+                  <div key={index} className="text-sm text-gray-900">
                     {exercise.name} - {exercise.sets} sets, {exercise.reps} reps
                     {exercise.weight && `, ${exercise.weight}kg`}
                   </div>
