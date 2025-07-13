@@ -77,13 +77,13 @@ export default function WorkoutPlanSelector({ onDaySelect }: WorkoutPlanSelector
 
   const getDayIcon = (dayKey: string) => {
     const icons = {
-      day_1: "💪", // Push
-      day_2: "🏋️", // Pull
-      day_3: "🦵", // Legs
-      day_4: "⚡", // Upper
-      day_5: "🔥"  // Lower
+      day_1: "", // Push
+      day_2: "", // Pull
+      day_3: "", // Legs
+      day_4: "", // Upper
+      day_5: ""  // Lower
     }
-    return icons[dayKey as keyof typeof icons] || "🏃"
+    return icons[dayKey as keyof typeof icons] || ""
   }
 
   return (
