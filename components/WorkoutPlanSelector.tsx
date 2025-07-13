@@ -75,24 +75,52 @@ export default function WorkoutPlanSelector({ onDaySelect }: WorkoutPlanSelector
     onDaySelect(day)
   }
 
+  const getDayIcon = (dayKey: string) => {
+    const icons = {
+      day_1: "💪", // Push
+      day_2: "🏋️", // Pull
+      day_3: "🦵", // Legs
+      day_4: "⚡", // Upper
+      day_5: "🔥"  // Lower
+    }
+    return icons[dayKey as keyof typeof icons] || "🏃"
+  }
+
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <h3 className="text-lg font-semibold text-gray-900">Select Workout Day</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {Object.entries(defaultWorkoutPlan).map(([dayKey, day]) => (
           <button
             key={dayKey}
             onClick={() => handleDaySelect(dayKey)}
-            className={`p-4 rounded-lg border-2 transition-colors ${
+            className={`card transition-all duration-200 ${
               selectedDay === dayKey
-                ? 'border-blue-500 bg-blue-50'
-                : 'border-gray-200 hover:border-gray-300'
+                ? 'ring-2 ring-blue-500 bg-blue-50 border-blue-200'
+                : 'hover:shadow-md hover:scale-105'
             }`}
           >
-            <h4 className="font-medium text-gray-900">{day.name}</h4>
-            <p className="text-sm text-gray-600 mt-1">
-              {day.exercises.length} exercises
-            </p>
+            <div className="card-body text-center">
+              <div className="text-3xl mb-3">{getDayIcon(dayKey)}</div>
+              <h4 className="font-semibold text-gray-900 mb-2">{day.name}</h4>
+              <div className="flex items-center justify-center space-x-4 text-sm text-gray-600">
+                <span className="flex items-center">
+                  <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  {day.exercises.length} exercises
+                </span>
+              </div>
+              
+              {selectedDay === dayKey && (
+                <div className="mt-3 pt-3 border-t border-gray-200">
+                  <div className="text-xs text-gray-500">
+                    {day.exercises.slice(0, 3).map(ex => ex.name).join(', ')}
+                    {day.exercises.length > 3 && '...'}
+                  </div>
+                </div>
+              )}
+            </div>
           </button>
         ))}
       </div>
