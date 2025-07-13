@@ -6,7 +6,7 @@
 
 /*TODO CSS mais personalizado  */
 :root {
-  /* Color System - Inspired by Kent's clean palette */
+  /* cores limpas*/
   --color-primary: 59 130 246; /* Blue-500 */
   --color-primary-dark: 37 99 235; /* Blue-600 */
   --color-secondary: 16 185 129; /* Emerald-500 */
@@ -187,7 +187,7 @@ a:hover {
 
 .btn-ghost {
   background-color: rgb (var(--color-gray-50));
-  color: rgb(var(--color-gray-900));
+  color: #333;
 }
 
 .btn-ghost:hover:not(:disabled) {
