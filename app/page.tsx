@@ -73,7 +73,7 @@ export default function LandingPage() {
                           </svg>
                         </div>
                         <h3 className="text-2xl font-semibold text-gray-900 mb-2">Meus Treinos</h3>
-                        <p className="text-gray-600">Visualize seu histórico de treinos e acompanhe seu progresso.</p>
+                        <p className="text-gray-600">Visualize seu histórico de treinos e acompanhe seu progresso</p>
                       </div>
                     </div>
                   </Link>
