@@ -186,7 +186,7 @@ a:hover {
 }
 
 .btn-ghost {
-  background-color: transparent;
+  background-color: rgb (var(--color-gray50));
   color: rgb(var(--color-gray-900));
 }
 
