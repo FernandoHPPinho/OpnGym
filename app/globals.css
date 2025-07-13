@@ -12,7 +12,7 @@
   --color-secondary: 16 185 129; /* Emerald-500 */
   --color-accent: 245 158 11; /* Amber-500 */
   
-  /* Cores neutras */
+  /* escala de cinza */
   --color-gray-50: 249 250 251;
   --color-gray-100: 243 244 246;
   --color-gray-200: 229 231 235;
@@ -187,7 +187,7 @@ a:hover {
 
 .btn-ghost {
   background-color: rgb (var(--color-gray-50));
-  color: #333;
+  color: rgb(var(--color-secondary));
 }
 
 .btn-ghost:hover:not(:disabled) {
