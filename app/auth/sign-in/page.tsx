@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { authService } from '../../services/auth'
 import { useRouter } from 'next/navigation'
+import { useAuth } from '../../contexts/AuthContext'
 
 export default function SignIn() {
   const [email, setEmail] = useState('')
@@ -10,6 +11,7 @@ export default function SignIn() {
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
+  const { refreshUser } = useAuth()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -22,9 +24,9 @@ export default function SignIn() {
       console.log('Sign in result:', result)
       
       if (result.success) {
-        console.log('Sign in successful, redirecting...')
-        // Force a hard navigation to ensure the session is properly loaded
-        window.location.href = '/'
+        console.log('Sign in successful, refreshing auth context...')
+        await refreshUser()
+        router.push('/')
       } else {
         console.error('Sign in failed:', result.error)
         setError(result.error || 'Failed to sign in')

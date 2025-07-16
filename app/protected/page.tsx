@@ -1,28 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { authService } from '../services/auth'
+import { useAuth } from '../contexts/AuthContext'
 
 export default function Home() {
-  const [user, setUser] = useState<any>(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const loadUser = async () => {
-      try {
-        const result = await authService.getUser()
-        if (result.success && result.data) {
-          setUser(result.data)
-        }
-      } catch (error) {
-        console.error('Error loading user:', error)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    loadUser()
-  }, [])
+  const { user, loading } = useAuth()
 
   if (loading) {
     return (
