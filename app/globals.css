@@ -195,7 +195,7 @@ a:hover {
   color: rgb(var(--color-gray-900));
 }
 
-/* Estilos para formularis*/
+/* EStilos para formulario*/
 .form-input {
   width: 100%;
   padding: var(--space-3) var(--space-4);
