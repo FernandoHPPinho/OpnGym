@@ -120,7 +120,7 @@ export default function WorkoutForm() {
         <form onSubmit={handleSubmit} className="card-body space-y-6">
           {exercises.map((exercise, index) => (
             <div key={index} className="bg-gray-50 rounded-lg p-4 animate-slide-in">
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
                 <div className="md:col-span-2">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Exercise Name
@@ -165,21 +165,21 @@ export default function WorkoutForm() {
                   />
                 </div>
                 
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Weight (kg)
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="0"
+                    value={exercise.weight}
+                    onChange={(e) => updateExercise(index, 'weight', parseInt(e.target.value) || 0)}
+                    className="form-input"
+                    min="0"
+                  />
+                </div>
+                
                 <div className="flex items-end space-x-2">
-                  <div className="flex-1">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Weight (kg)
-                    </label>
-                    <input
-                      type="number"
-                      placeholder="0"
-                      value={exercise.weight}
-                      onChange={(e) => updateExercise(index, 'weight', parseInt(e.target.value) || 0)}
-                      className="form-input"
-                      min="0"
-                    />
-                  </div>
-                  
                   <button
                     type="button"
                     onClick={() => removeExercise(index)}
