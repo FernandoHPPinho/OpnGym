@@ -1,38 +1,30 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { authService } from '../services/auth'
+import { useAuth } from '../contexts/AuthContext'
 
 export default function AuthCheck() {
   const router = useRouter()
-  const [loading, setLoading] = useState(true)
+  const { user, loading, signOut } = useAuth()
 
   useEffect(() => {
-    const checkAuth = async () => {
-      const sessionResult = await authService.getSession()
-      if (!sessionResult.success || !sessionResult.data) {
-        router.push('/auth/sign-in')
-      } else {
-        setLoading(false)
-      }
+    if (!loading && !user) {
+      router.push('/auth/sign-in')
     }
-
-    checkAuth()
-  }, [router])
-
-  const handleSignOut = async () => {
-    await authService.signOut()
-    window.location.href = '/auth/sign-in'
-  }
+  }, [user, loading, router])
 
   if (loading) {
     return null
   }
 
+  if (!user) {
+    return null
+  }
+
   return (
     <button
-      onClick={handleSignOut}
+      onClick={signOut}
       className="text-gray-600 hover:text-gray-900"
     >
       Sign Out
